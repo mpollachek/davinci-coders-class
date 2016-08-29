@@ -19,14 +19,14 @@ max_rot(56789) should return 68957
 
 
 def max_rot(n):
-    a = list(str(n))
-    b = [n]
-    index = 0
-    end = len(a) - 1
-    while index <= end - 1:
-        a.insert(end, a.pop(index))
-        y = ''.join(map(str, a))
-        b.insert(-1, y)
-        index +=1
-    return max(b)
+    a = list(str(n))                  #turn number into a list of digits
+    b = [n]                           #create list to put all final numbers in
+    index = 0                         #index is location of number you are moving
+    end = len(a) - 1                  #last index in list is length minus 1
+    while index <= end - 1:           
+        a.insert(end, a.pop(index))   #pop out indexed number and insert at end
+        y = ''.join(map(str, a))      #convert list (a) to string and join as 1 number
+        b.insert(-1, y)               #add number to list (b)
+        index +=1                     #add 1 to index
+    return max(b)                     #return highest number in list (b)
 
