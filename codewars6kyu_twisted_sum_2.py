@@ -13,10 +13,8 @@ def compute_sum(n):
     a = []                                   #empty list to put values in every loop
     extra = 0                                #every time n goes up 10 we need to increase this by 1
     while n > 0:
-        if n < 9 and n > 0:
+        if n <= 9 and n > 0:
             b = sum(range(0, n+1)) + (extra * n)
-        elif n == 9:
-            b = sum(range(0, 10)) + (extra * 9)
         elif n > 9:
             b = sum(range(0, 10)) + (extra * 10)
             extra += 1
